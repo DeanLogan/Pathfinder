@@ -1,5 +1,5 @@
 # Pathfinder
-This README includes a project description (what the project is along with what technologies were used to build it), how to set up the system (the steps needed to execute the code either with docker or a virtual environment), and account information to log into the system.
+This README includes a project description (what the project is along with what technologies were used to build it), how to set up the system (the steps needed to execute the code either with docker or a virtual environment), and account information to log into the system. 
 
 ## Contents
 
@@ -22,15 +22,17 @@ This README includes a project description (what the project is along with what 
     * [Running Azurite](#running-azurite)
   * [Using your own Azure Blob Storage](#using-your-own-azure-storage-account)
 * [Accounts](#accounts)
-* [Useful Links](#useful-links)
 * [Run Indeed Job Spider](#run-indeed-job-spider)
 * [Extra Information](#extra-information)
-  * [Populating The Database](#populate-database)
   * [Branches Overview](#branches-overview)
+  * [Useful Links](#useful-links)
+  * [Populating The Database (If needed)](#populate-database-(if-needed))
 
 ## Project Description
 
-**Pathfinder** is a system prototype designed to streamline the module selection process for students, empowering them to make informed choices based on their preferences and relevant career information. Developed as part of the *CSC3068* and *CSC3069* modules, this project aims to enhance the academic journey of students within the EEECS department.
+**Pathfinder** is a system prototype aimed at streamlining the module selection process for students, enabling them to make well-informed choices based on their preferences and career information. Developed as part of the *CSC3068* and *CSC3069* modules, this project endeavors to enrich the academic journey of students within the EEECS department at Queen's University Belfast. 
+
+The project was constructed during the final year of the Software Engineering degree program at Queen's University Belfast. Consequently, various reports were produced as part of the project submission. For *CSC3068*, a development journal and a prototype report were generated, while for *CSC3069*, a research essay exploring a chosen topic (mine focused on a comparison between OOP and FP paradigms), alongside a comprehensive dissertation covering architecture diagrams, planning, implementation details, and an overall project evaluation, were prepared. These reports, along with presentations demonstrating the system's functionality, are available in the "reports" folder.
 
 ### Key Features
 
@@ -69,7 +71,10 @@ The system incorporates effective backup and restore functionality with user-fri
 *Pathfinder* represents a collaborative effort to enhance the academic experience, offering students a technologically advanced tool to navigate their educational journey effectively.
 
 ## Set Up 
-(Note: at the bottom of this README are some links to resources that might help you use Docker or Virtual Environments if this is your first time using these)
+This project offers flexibility in deployment, allowing users to utilize either a Docker container or a virtual environment. Below are instructions for setting up the project using either method. While Docker is recommended for its simplified process, the team acknowledges that not everyone prefers this approach.
+
+(Note: Towards the bottom of this README, you'll find some links to resources that may assist you in using Docker or Virtual Environments, especially if this is your first time working with them. These resources are listed under [Useful Links](#useful-links).)
+
 ### Docker
 1.	Clone the repository to your system.
 2.	[Install Docker Desktop](https://www.docker.com/products/docker-desktop/) on your computer if it has not already been installed.
@@ -151,7 +156,22 @@ There are 2 access levels to the system “admin” and “student”. Admin acc
 1.  Open a terminal window (PowerShell if you're on Windows) on your computer and navigate to the directory where the project has been cloned to. To do this, open the folder where you extracted the repository, then right-click on the folder called "Pathfinder" and choose "Open in Terminal" (for Linux/Mac) or "Open Powershell window here" (for Windows).
 2.	In the terminal run the following command ```scrapy runspider .\webScraping\spiders\IndeedJobSpider.py```.
 
-## Useful Links
+## Extra Information
+
+### Branches Overview
+
+- **Main Branch:**
+  - The main branch houses the latest and improved version of the PATHFINDER system. This branch is intended for running the system locally, providing the most up-to-date and stable version of the codebase. Developers should primarily interact with this branch for ongoing development and testing.
+
+- **Prototype-(SDP2-submission) Branch:**
+  - The Prototype-(SDP2-submission) branch preserves an older prototype of the PATHFINDER project, specifically the version submitted for CSC3068. This branch serves as a historical record and showcases the evolution of the system from its early stages to its current state in the main branch. While the main branch represents the new and improved version, the Prototype branch offers insights into the project's development history and milestones.
+
+- **Server Branch:**
+  - The server branch is dedicated to the codebase configured for deployment on a server within Queen's University Belfast. This branch includes modifications and settings tailored for a server environment, ensuring compatibility and optimal performance when hosting the PATHFINDER system on the university's server infrastructure. Developers focusing on deployment-related tasks and server integration should refer to this branch for relevant configurations and code adjustments.
+
+These branches serve distinct purposes within the development lifecycle, offering a clear separation of concerns for local development, historical reference, and server deployment. It is essential for contributors and users to choose the appropriate branch based on their specific needs and the stage of the project they are working on.
+
+### Useful Links
 Below are some links that might be helpful in creating/running docker containers and virtual environments if this is the first time using these resources. If you have used Docker or Virtual Environments before or are familiar with similar technologies these resources can be ignored.
 * [Download Docker](https://www.docker.com/products/docker-desktop/)
 * [Docker Getting Started Tutorial](https://github.com/docker/getting-started)
@@ -163,25 +183,9 @@ Below are some links that might be helpful in creating/running docker containers
 * [Azurite Github Page](https://github.com/Azure/Azurite)
 * [Configure Azure Storage connection strings](https://learn.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string)
 
-## Extra Information
+### Populate Database (If needed)
 
-### Branches Overview
-
-- **Main Branch:**
-  - The main branch houses the latest and improved version of the PATHFINDER system. This branch is intended for running the system locally, providing the most up-to-date and stable version of the codebase. Developers should primarily interact with this branch for ongoing development and testing.
-
-- **Prototype-(SDP2-submission) Branch:**
-  - The Prototype-(SDP2-submission) branch preserves an older prototype of the PATHFINDER project, specifically submitted for CSC3068. This branch serves as a historical record and showcases the evolution of the system from its early stages to its current state in the main branch. While the main branch represents the new and improved version, the Prototype branch offers insights into the project's development history and milestones.
-
-- **Server Branch:**
-  - The server branch is dedicated to the codebase configured for deployment on a server within Queen's University Belfast. This branch includes modifications and settings tailored for a server environment, ensuring compatibility and optimal performance when hosting the PATHFINDER system on the university's server infrastructure. Developers focusing on deployment-related tasks and server integration should refer to this branch for relevant configurations and code adjustments.
-
-These branches serve distinct purposes within the development lifecycle, offering a clear separation of concerns for local development, historical reference, and server deployment. It is essential for contributors and users to choose the appropriate branch based on their specific needs and the stage of the project they are working on.
-
-
-### Populate Database
-
-It is possible to add some test data to the database using some of the python scripts the team has created, the following is how to run these scripts
+The database is already populated with data and if this data is lost the backup functionality will restore the database, however the team did create some python scripts that populates the database before the backup functionality was created, if you wish to use these scripts, below is the instructions on how to run them: 
 
 1. In the directory path enter the command ```python manage.py shell```
 2. ```>>> from database.models import *```
